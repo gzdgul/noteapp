@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Note Panel</title>
+  <link rel="stylesheet" href="./assets/css/bootstrap.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;600&display=swap" rel="stylesheet">
+
+
+
+</head>
+<body>
+<div class="main">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-2 text-center">
+        Column
+        <ul class="list-group">
+          <li class="list-group-item">An item</li>
+          <li class="list-group-item">A second item</li>
+          <li class="list-group-item">A third item</li>
+          <li class="list-group-item">A fourth item</li>
+          <li class="list-group-item">And a fifth one</li>
+        </ul>
+        <br>
+        Workspaces
+        <ul class="list-group">
+          <li class="list-group-item">An item</li>
+          <li class="list-group-item">A second item</li>
+          <li class="list-group-item">A third item</li>
+          <li class="list-group-item">A fourth item</li>
+          <li class="list-group-item">And a fifth one</li>
+        </ul>
+      </div>
+      <div class="col-8">
+        Column
+        <!-- As a heading -->
+        <nav class="navbar bg-body-tertiary">
+          <div class="container-fluid">
+            <span style="font-size: 0.9rem" class="navbar-brand mb-0 h1">Navbar</span>
+          </div>
+        </nav>
+        <i class="fa-duotone fa-house-user"></i>
+        <label style="font-size: 1.5rem; font-weight: bold" class="h1 m-5">LABEL TASK</label>
+
+        <div class="tablediv ms-5">
+          <table class="table table-bordered text-center">
+            <thead>
+            <tr>
+              <th width="3%" scope="col">#</th>
+              <th width="30%" scope="col">My Notes</th>
+              <th width="15%" scope="col">Due Date</th>
+              <th width="10%" scope="col">Status</th>
+              <th width="10%" scope="col">Assign</th>
+            </tr>
+            </thead>
+            <tbody id="table_note">
+
+            <tr id="note0" onmouseover="renk(this)" onmouseleave="renkReverse(this)" onclick="OptionSelected(this)">
+              <th scope="row">
+                <div class="">
+                  <input class="form-check-input" type="checkbox">
+                </div>
+              </th>
+              <td class="text-start">Notenotee...</td>
+              <td>Thurs - 2/2/2023</td>
+              <td><button type="button" class="btn btn-sm btn-outline-primary disabled">New</button>
+              </td>
+              <td>@User1</td>
+            </tr>
+
+            </tbody>
+
+          </table>
+          <!-- Button trigger modal -->
+          <button type="button" id="plusNewNote" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Add New Note
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Note</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Write something...<input type="text" class="form-control" id="addNoteInput" value="">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="buttonSaveChanges" onclick="addANote()">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-2 text-center">
+        Column
+        <ul class="list-group border-0 m-5 p-5">
+          <li class="list-group-item border-0"> <button type="button" class="btn btn-outline-danger" id="deleteButton" onclick="Delete()">Delete</button></li>
+          <li class="list-group-item border-0"> <button type="button" class="btn btn-outline-warning" id="">Edit</button></li>
+          <li class="list-group-item border-0"> <button type="button" class="btn btn-outline-dark" id="">Overdue</button></li>
+          <li class="list-group-item border-0"> <button type="button" class="btn btn-outline-success" id="completedButton">Completed</button></li>
+          <li class="list-group-item border-0"> <button type="button" class="btn btn-outline-secondary" id="">.........</button></li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+<script src="./assets/js/bootstrap.js"></script>
+<script src="index.js"></script>
+</html>
